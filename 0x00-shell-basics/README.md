@@ -1,5 +1,8 @@
 In this README you will be able to know what each script do
 
+
+
+
 0-current_working_directory
 Show your actual path name
 
