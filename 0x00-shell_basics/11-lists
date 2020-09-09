@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lan /$PWD .. boot
+ls -lan /$PWD .. /boot
