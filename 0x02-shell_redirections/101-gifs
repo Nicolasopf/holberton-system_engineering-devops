@@ -1,2 +1,2 @@
 #!/bin/bash
-find * -type f -name "*.gif" -printf "%f\n" | sort | cut -b -4
+find * -type f -name "*.gif" -printf "%f\n" | cut -b -4 | sort
