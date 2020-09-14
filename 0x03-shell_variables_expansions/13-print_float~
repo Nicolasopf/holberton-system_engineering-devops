@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e float("{:.2f}".format($NUM))
