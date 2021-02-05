@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# display dir content Where only the part of the name after the first dash
+# is shown
+
+for i in *; do
+    echo "$i" | cut -d "-" -f 2
+done
