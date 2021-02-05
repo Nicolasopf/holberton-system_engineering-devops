@@ -2,7 +2,8 @@
 # This script is displaying "Holberton School" 10 times using until
 
 i=1
-until [ $i -gt 10 ]; do
+until [ $i -gt 10 ]
+do
     echo "Hoberton School"
     i=$((i + 1))
 done
