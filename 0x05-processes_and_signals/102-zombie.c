@@ -25,7 +25,7 @@ int infinite_while(void)
 int main(void)
 {
 	pid_t pid;
-	int zomb = 0;
+	char zomb = 0;
 
 	while (zomb < 5)
 	{
