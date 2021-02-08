@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Displays I am invincible!!! when receiving a SIGTERM signal 
+# Displays I am invincible!!! when receiving a SIGTERM signal.
 
 while true
 do
