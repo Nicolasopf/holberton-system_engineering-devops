@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Change your home ip to resolve to 127.0.0.2
+# Change facebook to resolve to 8.8.8.8
+cp /etc/hosts ~/hosts.new
+sed -i 's/127.0.0.2/127.0.0.1/' ~/hosts.new
+echo -e "8.8.8.8\tfacebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
