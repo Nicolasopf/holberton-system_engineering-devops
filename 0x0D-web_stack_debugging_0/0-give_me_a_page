@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Fix docker container where apache was not working
+service apache2 start
