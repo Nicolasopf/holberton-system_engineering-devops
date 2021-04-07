@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx web server
-sudo apt update -y
-sudo apt install nginx -y
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sudo sed -i '/server_name _;/a\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}' default
-service nginx start
+apt-get update
+apt-get install -y nginx
+echo "Holberton School" > /var/www/html/index.html
+sed -i '/server_name _;/a\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}' default
+service nginx restart
