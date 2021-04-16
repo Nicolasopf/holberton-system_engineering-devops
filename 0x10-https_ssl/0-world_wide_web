@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Prints in a better way the subdomain, domain, record type and IP.
+if [[ $# == 1 ]]; then
+	line=$(dig "www.$1" | grep -A1 'ANSWER SECTION' | tail -1)
+	echo "The subdomain $(echo "$line" | awk -F'.' '{print $1;}') is a $(echo "$line" | awk -F' ' '{print $4;}') record and points to $(echo "$line" | awk -F' ' '{print $5;}')"
+	line=$(dig "lb-01.$1" | grep -A1 'ANSWER SECTION' | tail -1)
+	echo "The subdomain $(echo "$line" | awk -F'.' '{print $1;}') is a $(echo "$line" | awk -F' ' '{print $4;}') record and points to $(echo "$line" | awk -F' ' '{print $5;}')"
+	line=$(dig "web-01.$1" | grep -A1 'ANSWER SECTION' | tail -1)
+	echo "The subdomain $(echo "$line" | awk -F'.' '{print $1;}') is a $(echo "$line" | awk -F' ' '{print $4;}') record and points to $(echo "$line" | awk -F' ' '{print $5;}')"
+	line=$(dig "web-02.$1" | grep -A1 'ANSWER SECTION' | tail -1)
+	echo "The subdomain $(echo "$line" | awk -F'.' '{print $1;}') is a $(echo "$line" | awk -F' ' '{print $4;}') record and points to $(echo "$line" | awk -F' ' '{print $5;}')"
+else
+   line=$(dig "$2.$1" | grep -A1 'ANSWER SECTION' | tail -1)
+   echo "The subdomain $(echo "$line" | awk -F'.' '{print $1;}') is a $(echo "$line" | awk -F' ' '{print $4;}') record and points to $(echo "$line" | awk -F' ' '{print $5;}')"
+fi
