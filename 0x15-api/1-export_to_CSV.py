@@ -5,7 +5,7 @@ if __name__ == "__main__":
     from sys import argv
     html = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])).json()
-    employee_name = html['name']
+    employee_name = html['username']
     html = requests.get("https://jsonplaceholder.typicode.com/todos/").json()
     csv = ""
     for dic in html:
