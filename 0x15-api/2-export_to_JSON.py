@@ -8,5 +8,14 @@ if __name__ == "__main__":
         "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])).json()
     employee_name = html['username']
     html = requests.get("https://jsonplaceholder.typicode.com/todos/").json()
+    dic = {}
+    dic[argv[1]] = []
+    for item in html:
+        if item['userId'] == int(argv[1]):
+            tmp = {}
+            tmp['task'] = item['title']
+            tmp['completed'] = item['completed']
+            tmp['username'] = employee_name
+            dic[argv[1]].append(tmp)
     with open(argv[1] + ".json", "w+") as file:
-        json.dump(html, file)
+        json.dump(dic, file)
