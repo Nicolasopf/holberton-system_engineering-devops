@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ Using a rest api return information about the id passed as argument """
 if __name__ == "__main__":
-    from sys import argv
     import requests
+    from sys import argv
     html = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])).json()
     employee_name = html['name']
