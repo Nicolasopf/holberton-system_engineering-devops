@@ -9,5 +9,5 @@ def number_of_subscribers(subreddit):
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     html = get(url, headers=header, allow_redirects=False)
     if html.status_code == 200:
-        return html.json()['data']['suscribers']
+        return html.json()['data']['subscribers']
     return 0
