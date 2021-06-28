@@ -11,7 +11,7 @@ package { 'nginx':
   provider => 'apt'
 }
 ->
-header_line { 'Header using sed':
+file_line { 'Header using sed':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 default_server;',
