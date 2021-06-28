@@ -1,7 +1,7 @@
 # creating a custom HTTP header response with Puppet
 
 exec { 'update':
-  command => 'apt update',
+  command => 'apt-get update',
   user     => 'root',
   provider => 'shell',
 }
