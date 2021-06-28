@@ -2,7 +2,8 @@
 
 exec { 'update':
   command => 'apt update',
-  path    => '/usr/bin/'
+  user     => 'root',
+  provider => 'shell',
 }
 ->
 package { 'nginx':
